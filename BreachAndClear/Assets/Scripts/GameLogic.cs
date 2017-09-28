@@ -14,9 +14,12 @@ public class GameLogic : MonoBehaviour
 {
     
 	private gameStatus status = gameStatus.Start;
+    public Transform WorldOrigin;
 	public GameObject Player;
     private NavMeshAgent PlayerNav;
-    public Transform[] WayPoints;
+    public List<Transform> WayPoints;
+    public GameObject[] Sections;
+
 	private int wayPointTracker;
 
     public Canvas UICanvas;
@@ -26,7 +29,9 @@ public class GameLogic : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
+        WorldOrigin = GetComponent<Transform>();
 	    PlayerNav = Player.GetComponent<NavMeshAgent>();
+        status = gameStatus.Start;
 
 
 	}
@@ -40,22 +45,43 @@ public class GameLogic : MonoBehaviour
 		
 	}
 
-    public void StartGame()
+    public void NextStage()
     {
-		status = gameStatus.Moving;
-        UICanvas.gameObject.SetActive(false);
+        if(status == gameStatus.Shooting || status == gameStatus.Start)
+        {
+            status = gameStatus.Moving;
+        }
+        
+
     }
 
 	private void MovePlayer()
 	{		
-		if (wayPointTracker <= WayPoints.Length) {
+		if (wayPointTracker < WayPoints.Count) {
 			PlayerNav.destination = WayPoints [wayPointTracker].position;
 			wayPointTracker++;
 		}
 		status = gameStatus.Shooting;
 	}
 
-	private void StageCompleted(){
-		status = gameStatus.Moving;
+	public void StageCompleted(){
+
+        GameObject newSection;
+
+        Transform origin = WorldOrigin.Find("Room1").Find("EndofSegment");
+
+
+        newSection = Instantiate(Sections[0], origin.position, WorldOrigin.rotation);
+        foreach (Transform t in newSection.transform)
+        {
+            if(t.name == "Waypoints")
+            {
+                foreach (Transform t2 in t)
+                {
+                    WayPoints.Add(t2);
+                }
+            }
+        }
 	}
+
 }

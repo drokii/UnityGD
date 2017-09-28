@@ -9,7 +9,7 @@ public class PlayerShooting : MonoBehaviour {
     int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
     LineRenderer gunLine;                           // Reference to the line renderer.
     Light gunLight;                                 // Reference to the light component.
-    float effectsDisplayTime = .2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+    float effectsDisplayTime = .1f;                // The proportion of the timeBetweenBullets that the effects will display for.
     private PlayerControls pcontrols;
     private Touch touch;
     public Camera camera;
