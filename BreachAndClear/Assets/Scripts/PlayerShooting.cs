@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour {
 
-    public float range = 100f;                   
+    public float range = 50f;                   
     float timer;                                   
     LineRenderer gunLine;                           
     Light gunLight;                                

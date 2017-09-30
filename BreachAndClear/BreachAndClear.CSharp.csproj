@@ -78,6 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
+    <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
+    <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
+    <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\Scripts\GameLogic.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
