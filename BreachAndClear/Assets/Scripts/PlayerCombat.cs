@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShooting : MonoBehaviour {
+public class PlayerCombat : MonoBehaviour {
 
     public float range = 50f;                   
     float timer;                                   
