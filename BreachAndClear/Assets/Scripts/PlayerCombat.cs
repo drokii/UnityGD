@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour {
 
     public float range = 50f;                   
-    float timer;                                   
+    float timer;
+    public int shotdamage = 50;                         
     LineRenderer gunLine;                           
     Light gunLight;                                
     float effectsDisplayTime = .1f;                
@@ -53,7 +54,6 @@ public class PlayerCombat : MonoBehaviour {
         touchPosition = pcontrols.actualTouch;
 
         Vector3 cameraShoot = new Vector3(touchPosition.x, touchPosition.y, 0);
-        gunLight.enabled = true;
 
         gunLine.enabled = true;
         gunLine.SetPosition(0, transform.position);
@@ -65,6 +65,11 @@ public class PlayerCombat : MonoBehaviour {
 
         if (Physics.Raycast(shootRay, out shootHit, range))
         {
+            Enemy enemy = shootHit.collider.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(shotdamage, shootHit.point);
+            }
             gunLine.SetPosition(1, shootHit.point);
         }
         else

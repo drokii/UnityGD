@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
 {
     public int startingHealth = 100;
     public int currentHealth;
-    public float sinkSpeed = 2.5f;
+    public float sinkSpeed = 0.5f;
+    public float effectTimer = 1f;
     public AudioClip deathClip;
     public AudioClip hitClip;
     public AudioClip attackClip;
@@ -17,8 +18,9 @@ public class Enemy : MonoBehaviour
 
     Animator anim;
     AudioSource enemyAudio;
-    ParticleSystem hitParticles;
+    GameObject hitParticles;
     SphereCollider sphereCollider;
+    BoxCollider boxCollider;
 
     bool isDead;
     bool isSinking;
@@ -32,21 +34,22 @@ public class Enemy : MonoBehaviour
         attackTimer = 3f;
         anim = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
-        hitParticles = GetComponent<ParticleSystem>();
+        hitParticles = transform.Find("Flare").gameObject; ;
         sphereCollider = GetComponent<SphereCollider>();
-
+        boxCollider = GetComponent<BoxCollider>();
         currentHealth = startingHealth;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //playerHealth = player.GetComponent<Player>().getHealth();;
+        //playerHealth = player.GetComponent<Player>().getHealth();
         nav = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        if (isSinking)
-        {
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
-        }
+        //if (isSinking)
+        //{
+        //    transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+        //}
+
         MoveTowardsPlayer();
         if (isAttacking)
         {
@@ -66,7 +69,7 @@ public class Enemy : MonoBehaviour
 
         currentHealth -= amount;
         hitParticles.transform.position = hitPoint;
-        hitParticles.Play();
+        hitParticles.GetComponent<ParticleSystem>().Play();
 
         if (currentHealth <= 0)
         {
@@ -78,7 +81,11 @@ public class Enemy : MonoBehaviour
         if (other.gameObject == player.gameObject)
         {
             isAttacking = true;
-            nav.isStopped = true;
+            if (!isDead)
+            {
+                nav.SetDestination(gameObject.transform.position);
+            }
+
             anim.SetBool("IsMoving", false);
 
         }
@@ -87,7 +94,12 @@ public class Enemy : MonoBehaviour
     {
 
         isAttacking = false;
-        nav.isStopped = false;
+
+        if (!isDead)
+        {
+            nav.isStopped = false;
+        }
+
         anim.SetBool("IsMoving", true);
 
     }
@@ -95,7 +107,9 @@ public class Enemy : MonoBehaviour
     void AttackPlayer()
     {
         attackTimer += Time.deltaTime;
+
         string attack;
+
         System.Random r = new System.Random();
         int f = r.Next(0, 2);
         if (f == 1)
@@ -114,21 +128,26 @@ public class Enemy : MonoBehaviour
     }
     void Death()
     {
-
+        System.Random r = new System.Random();
+        GetComponent<Rigidbody>().isKinematic = false;
         isDead = true;
-        sphereCollider.isTrigger = true;
-        float varyAnimation = UnityEngine.Random.Range(0f, 2f);
+        nav.isStopped = true;       
+        boxCollider.isTrigger = true;
+
+        int varyAnimation = r.Next(0, 3);
         anim.SetTrigger("Dead" + Convert.ToString(varyAnimation));
+
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
-        StartSinking();
+
+        Destroy(gameObject, 2f);
+        //StartSinking();
     }
 
 
     private void StartSinking()
     {
         GetComponent<NavMeshAgent>().enabled = false;
-        GetComponent<Rigidbody>().isKinematic = true;
         isSinking = true;
         Destroy(gameObject, 2f);
     }
