@@ -13,6 +13,10 @@ public class MoveTowardsTarget : MonoBehaviour
 
     void Awake()
     {
+        if (Target == null)
+        {
+            Target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }

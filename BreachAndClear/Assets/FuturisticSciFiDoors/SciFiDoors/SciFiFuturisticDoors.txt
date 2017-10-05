@@ -1,0 +1,25 @@
+﻿Sci Fi Futuristic Doors - Unity 3d Asset
+
+
+1. Asset info
+* 1. This asset has been designed and created by Adam Bielecki (theadambielecki@gmail.com or suleib867@yahoo.co.uk) 
+* 2. 3d models have been created from scratch in Blender 2.69.
+* 3. All textures have been created from scratch in Gimp 2.
+* 4. Bump maps have been baked in Blender 2.69.
+2. Package content 
+* 1. Futuristic Sci Fi doors including frame.
+* 2. Wall.
+* 3. Floor.
+* 4. Space ambient sound.
+* 5. Script to close and open doors.
+3. Operating Sci Fi Doors with Script
+* 1. Doors can be opened using OpenDoors script under Scripts folder. Script contains 2 methods(OpenSciFiDoors and CloseSciFiDoors). Script is attached to SciFiDoorsSep game object. Methods can be easy called for example OnTriggerEnter method.
+
+
+
+
+
+
+This package contains Futuristic Space Doors divided into bottom and top parts. Both parts can be open simultaneously via script.<br>
+Whole object is build from 2 models - frames and doors (230 triangles together).
+Youtube presentation
