@@ -32,7 +32,7 @@ public class PlayerControls : MonoBehaviour
     {
         playerRbody = GetComponent<Rigidbody>();
         timeHeld = 0;
-        dragDistance = 0.15f;
+        dragDistance = 1f;
     }
 
     void Update()
