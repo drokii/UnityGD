@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -502,6 +502,10 @@ Prefab:
         type: 2}
       propertyPath: m_NavMeshData
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817291098070294, guid: 48b00c2601e07194f99396a9d45cad5a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 36.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48b00c2601e07194f99396a9d45cad5a, type: 2}
@@ -1910,7 +1914,7 @@ MonoBehaviour:
   - {fileID: 1583489331}
   - {fileID: 964301200}
   Sections:
-  - {fileID: 1535593382018726, guid: 48b00c2601e07194f99396a9d45cad5a, type: 2}
+  - {fileID: 1164672187322266, guid: 479e44cc6c2361542957f3148a3addfe, type: 2}
   lastGeneratedSection: {fileID: 0}
   startingRoom: {fileID: 1871527637}
   UICanvas: {fileID: 1389436422}
