@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -76,7 +77,9 @@ public class GameLogic : MonoBehaviour
         for (int i = 0; i < length; i++)
         {
             //1- Choose which section to spawn
-            GameObject nextSection = Sections[0];// plug Random.Range(0, x) here later on
+            System.Random r = new System.Random();
+
+            GameObject nextSection = Sections[r.Next(0,4)];// plug Random.Range(0, x) here later on
 
             //2 - Spawn it at prefab endpoint
             Transform nextSectionSpawnPoint = lastGeneratedSection.transform.Find("EndSection");

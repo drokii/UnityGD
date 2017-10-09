@@ -91,7 +91,6 @@
     <Compile Include="Assets\Standard Assets\Utility\AlphaButtonClickMask.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\FuturisticSciFiDoors\SciFiDoors\SciFiFuturisticDoors.txt" />
     <None Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\SF Pack\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\SF Pack\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

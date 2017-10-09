@@ -84,7 +84,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FuturisticSciFiDoors\SciFiDoors\Scripts\OpenDoors.cs" />
     <Compile Include="Assets\MoveTowardsTarget.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
@@ -175,7 +174,6 @@
     <Compile Include="Assets\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\FuturisticSciFiDoors\SciFiDoors\SciFiFuturisticDoors.txt" />
     <None Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\SF Pack\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\SF Pack\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
