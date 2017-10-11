@@ -56,26 +56,6 @@ public class Enemy : MonoBehaviour
             Attack();
         }
     }
-
-
-    public void TakeDamage(int amount, Vector3 hitPoint)
-    {
-
-        if (isDead)
-            return;
-
-        enemyAudio.clip = hitClip;
-        enemyAudio.Play();
-
-        currentHealth -= amount;
-        hitParticles.transform.position = hitPoint;
-        hitParticles.GetComponent<ParticleSystem>().Play();
-
-        if (currentHealth <= 0)
-        {
-            Death();
-        }
-    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player.gameObject)
@@ -103,6 +83,26 @@ public class Enemy : MonoBehaviour
         anim.SetBool("IsMoving", true);
 
     }
+
+    public void TakeDamage(int amount, Vector3 hitPoint)
+    {
+
+        if (isDead)
+            return;
+
+        enemyAudio.clip = hitClip;
+        enemyAudio.Play();
+
+        currentHealth -= amount;
+        hitParticles.transform.position = hitPoint;
+        hitParticles.GetComponent<ParticleSystem>().Play();
+
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+    
 
     void Attack()
     {

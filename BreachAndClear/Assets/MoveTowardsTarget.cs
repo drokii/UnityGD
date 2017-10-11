@@ -10,6 +10,7 @@ public class MoveTowardsTarget : MonoBehaviour
 
     private Animator animator;
     private NavMeshAgent agent;
+    public GameObject Player;
 
     void Awake()
     {
@@ -38,4 +39,5 @@ public class MoveTowardsTarget : MonoBehaviour
 	{
 	    agent.SetDestination(Target.position);
 	}
+   
 }
