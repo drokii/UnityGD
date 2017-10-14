@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093501033102386}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 34.594246, y: -6.877848, z: -9.80706}
+  m_LocalPosition: {x: 272.1564, y: 69.61237, z: 85.89542}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,6 @@ MonoBehaviour:
   objectToInstantiate: {fileID: 1822797768796256, guid: e9af62097a0ae214899292bfa109c06d,
     type: 2}
   spawnDelay: 5
-  spawnedEntitiesNumberLimit: 5
 --- !u!135 &135287400867089442
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -63,7 +62,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093501033102386}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 20

@@ -21,13 +21,13 @@ public class Enemy : MonoBehaviour
     GameObject hitParticles;
     SphereCollider sphereCollider;
     BoxCollider boxCollider;
+    CameraShake cam;
 
     bool isDead;
     bool isSinking;
-    private bool isMoving;
 
     float attackTimer;
-    private bool isAttacking;
+
 
     void Awake()
     {
@@ -41,17 +41,12 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         //playerHealth = player.GetComponent<Player>().getHealth();
         nav = GetComponent<NavMeshAgent>();
+        cam = player.transform.Find("Main Camera").GetComponent<CameraShake>();
     }
 
     void Update()
     {
-        //if (isSinking)
-        //{
-        //    transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
-        //}
-
-        MoveTowardsPlayer();
-        if (isAttacking)
+        if (!GetComponent<MoveTowardsTarget>().enabled)
         {
             Attack();
         }
@@ -60,29 +55,26 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject == player.gameObject)
         {
-            isAttacking = true;
+
             if (!isDead)
             {
-                nav.SetDestination(gameObject.transform.position);
+                GetComponent<MoveTowardsTarget>().enabled = false;
             }
 
             anim.SetBool("IsMoving", false);
 
+
         }
     }
-    void OnTriggerExit(Collider other)
-    {
+    //void OnTriggerExit(Collider other)
+    //{
 
-        isAttacking = false;
+    //    if (!isDead)
+    //    {
+    //        GetComponent<MoveTowardsTarget>().enabled = true;
+    //    }
 
-        if (!isDead)
-        {
-            nav.isStopped = false;
-        }
-
-        anim.SetBool("IsMoving", true);
-
-    }
+    //}
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
@@ -102,70 +94,62 @@ public class Enemy : MonoBehaviour
             Death();
         }
     }
-    
+
 
     void Attack()
     {
         attackTimer += Time.deltaTime;
 
-        string attack;
+        
+        if (attackTimer >= 2f)
+        {
+            string attack;
 
-        System.Random r = new System.Random();
-        int f = r.Next(0, 2);
-        if (f == 1)
-        {
-            attack = "LightAttack";
-        }
-
-        else
-        {
-            attack = "HeavyAttack";
-        }
-        if (attackTimer > 2f)
-        {
+            System.Random r = new System.Random();
+            int f = r.Next(0, 2);
+            if (f == 1)
+            {
+                attack = "LightAttack";
+            }
+            else
+            {
+                attack = "HeavyAttack";
+            }
             anim.SetTrigger(attack);
             attackTimer = 0f;
+            player.gameObject.GetComponent<Health>().TakeDamage(25);
+            cam.Enable();
         }
     }
     void Death()
     {
         System.Random r = new System.Random();
-        //GetComponent<Rigidbody>().isKinematic = true;
+
         isDead = true;
-        nav.isStopped = true;       
-        //boxCollider.isTrigger = true;
+        if (nav.isOnNavMesh)
+        {
+            nav.isStopped = true;
+        }
+
 
         int varyAnimation = r.Next(1, 3);
         anim.SetTrigger("Dead" + Convert.ToString(varyAnimation));
 
         enemyAudio.clip = deathClip;
         enemyAudio.Play();
-
-        Destroy(gameObject, 2f);
-        //StartSinking();
-    }
-
-
-    private void StartSinking()
-    {
-        GetComponent<NavMeshAgent>().enabled = false;
-        isSinking = true;
+        
         Destroy(gameObject, 2f);
     }
+
     private void MoveTowardsPlayer()
     {
-        if (currentHealth > 0) // plug playerHealth.currentHealth > 0 here later
+        if (currentHealth > 0)
         {
             GetComponent<MoveTowardsTarget>().enabled = true;
-            //isMoving = true;
-            // nav.SetDestination(player.position);
         }
         else
         {
             GetComponent<MoveTowardsTarget>().enabled = false;
-
-            //isMoving = false;
-            //nav.Stop();
         }
     }
 }

@@ -13,16 +13,14 @@ public class PlayerCombat : MonoBehaviour {
     private PlayerControls pcontrols;
     private Vector2 touchPosition;
     public Camera camera;
-
+    public GameObject hitParticles;
+    public GameObject world;
 
     void Awake()
     {
-        
         gunLine = GetComponent<LineRenderer>();
         gunLight = GetComponent<Light>();
         pcontrols = GetComponentInParent<PlayerControls>();
-        
-
     }
 
     void FixedUpdate()
@@ -55,6 +53,7 @@ public class PlayerCombat : MonoBehaviour {
 
         Vector3 cameraShoot = new Vector3(touchPosition.x, touchPosition.y, 0);
 
+        
         gunLine.enabled = true;
         gunLine.SetPosition(0, transform.position);
 
@@ -70,6 +69,14 @@ public class PlayerCombat : MonoBehaviour {
             {
                 enemy.TakeDamage(shotdamage, shootHit.point);
             }
+            else
+            {
+                GameObject hit = Instantiate(hitParticles, shootHit.point, shootHit.transform.rotation);
+                hitParticles.transform.position = shootHit.point;
+                hitParticles.GetComponent<ParticleSystem>().Play();
+                Destroy(hit,3f);
+            }
+
             gunLine.SetPosition(1, shootHit.point);
         }
         else

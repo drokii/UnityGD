@@ -84,17 +84,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MoveTowardsTarget.cs" />
+    <Compile Include="Assets\CameraShake.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
-    <Compile Include="Assets\RestartButton.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\GameLogic.cs" />
+    <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\LevelGeneration.cs" />
+    <Compile Include="Assets\Scripts\MoveTowardsTarget.cs" />
     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\RestartButton.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -171,7 +174,6 @@
     <Compile Include="Assets\SF Pack\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\SF Pack\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\SF Pack\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

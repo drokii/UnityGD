@@ -529,8 +529,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1822797768796256}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.51675224, y: 0.2, z: 24.74}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4841498485224236}
@@ -538,7 +538,7 @@ Transform:
   - {fileID: 4610128121362102}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4328268117883126
 Transform:
   m_ObjectHideFlags: 1
@@ -905,6 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   IsMovingParam: IsMoving
+  Player: {fileID: 0}
 --- !u!135 &135906135046265634
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -913,9 +914,9 @@ SphereCollider:
   m_GameObject: {fileID: 1822797768796256}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2.7
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137040440874531312
 SkinnedMeshRenderer:
@@ -993,7 +994,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

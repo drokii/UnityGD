@@ -1,19 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class KeepRunning : MonoBehaviour
+
+public class PlayerMovement : MonoBehaviour
 {
+    public List<Transform> WayPoints;
+    private int wayPointTracker;
+    private NavMeshAgent PlayerNav;
+    private LevelGeneration levelGen;
 
-    private float MoveSpeed = 0.1f;
-    
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start ()
+    {
+        PlayerNav = GetComponent<NavMeshAgent>();
+        levelGen = GameObject.Find("World").GetComponent<LevelGeneration>();
+        WayPoints = levelGen.WayPoints;
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		this.transform.Translate(0, 0, MoveSpeed);
-	}
+    public void MovePlayer()
+    {
+        //Move player to next waypoint
+        if (wayPointTracker < WayPoints.Count)
+        {
+            PlayerNav.destination = WayPoints[wayPointTracker].position;
+            wayPointTracker++;
+        }       
+    }
+
 }
