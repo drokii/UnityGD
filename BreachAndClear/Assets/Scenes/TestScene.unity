@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WayPoints: []
   Sections:
-  - {fileID: 1053069752957318, guid: 13fdd8b02f9bdc649a2d107d8595904d, type: 2}
+  - {fileID: 0}
   - {fileID: 1164672187322266, guid: 479e44cc6c2361542957f3148a3addfe, type: 2}
   - {fileID: 1164672187322266, guid: 479e44cc6c2361542957f3148a3addfe, type: 2}
   - {fileID: 1083292375975628, guid: f6938310df44d424185b8b2028ae1b37, type: 2}
