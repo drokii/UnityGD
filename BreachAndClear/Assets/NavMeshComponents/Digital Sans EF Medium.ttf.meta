@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e22ecdf32838c7a41ae102f0b1c6d3f0
+timeCreated: 1508241382
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Digital Sans EF
+  fontNames:
+  - Digital Sans EF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

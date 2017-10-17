@@ -2720,7 +2720,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587641648384740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.2, y: 0, z: 8.83}
+  m_LocalPosition: {x: 7.2, y: 0, z: 7.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4598694951136262}
@@ -3243,7 +3243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1271074465390690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: -0.015999243, z: 73.75}
+  m_LocalPosition: {x: 20, y: -0.5, z: 73.147}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4424811608768382}
@@ -3731,7 +3731,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101944984647404}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 9.899506, y: 0.23999786, z: 36.910004}
+  m_LocalPosition: {x: 9.899506, y: 0.23, z: 36.910004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4141834453558666}
@@ -11276,7 +11276,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.4653382, g: 0.18274222, b: 0.9558824, a: 1}
+  m_Color: {r: 0.36551714, g: 0, b: 1, a: 1}
   m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
@@ -11348,7 +11348,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.4653382, g: 0.18274222, b: 0.9558824, a: 1}
+  m_Color: {r: 0.36551714, g: 0, b: 1, a: 1}
   m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
@@ -11384,7 +11384,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.4653382, g: 0.18274222, b: 0.9558824, a: 1}
+  m_Color: {r: 0.36551714, g: 0, b: 1, a: 1}
   m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
@@ -11645,7 +11645,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 1a4510137c84e0d4a9ebfb10910e44b4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 9d4c7bddf96cb1f4499362868131fa14, type: 2}
 --- !u!114 &114990716797477882
 MonoBehaviour:
   m_ObjectHideFlags: 1

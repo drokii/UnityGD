@@ -22,6 +22,7 @@ public class PlayerControls : MonoBehaviour
     private float dragDistance;
     private float timeHeld;
     public TouchMovement returnMovement = TouchMovement.NONE;
+    public TouchMovement previousMovement = TouchMovement.NONE;
     Vector2 firstTouch;
     private Vector2 touchDelta;
 
@@ -37,11 +38,14 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        //DetectAccelerometer();
-        DetectTouchMovement();
-        //MoveCharacter();
-        DebugLog();
+        if (previousMovement == returnMovement)
+        {
+            returnMovement = TouchMovement.NONE;
+        }
+        previousMovement = returnMovement;
 
+        DetectTouchMovement();
+        DebugLog();
     }
 
     private void DebugLog() //  This is here until I implement functionality for all swipes.
@@ -50,10 +54,7 @@ public class PlayerControls : MonoBehaviour
         {
             Debug.Log(Convert.ToString(returnMovement) + " = Touch Input; Accelerometer is =" + Convert.ToString(accelerometerRead));
 
-            if (returnMovement != TouchMovement.HOLD && returnMovement != TouchMovement.TAP)
-            {
-                returnMovement = TouchMovement.NONE;
-            }
+            
         }
     }
 
@@ -78,7 +79,7 @@ public class PlayerControls : MonoBehaviour
             }
 
 
-            if (touch.phase == TouchPhase.Ended)
+            if (touch.phase == TouchPhase.Ended && timeHeld >= 0.3f)
             {
                 timeHeld = 0;
                 touchDelta = touch.deltaPosition.normalized;
@@ -113,10 +114,11 @@ public class PlayerControls : MonoBehaviour
                         }
                     }
                 }
-                else
-                {
-                    returnMovement = TouchMovement.TAP;
-                }
+                
+            }
+            else
+            {
+                returnMovement = TouchMovement.TAP;
             }
         }
 
