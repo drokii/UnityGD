@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreachAndClear.CSharp.Plugi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreachAndClear.CSharp.Editor", "BreachAndClear.CSharp.Editor.csproj", "{D31E09F3-17E0-DEF2-53DD-9F017800D9C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreachAndClear.CSharp.Editor.Plugins", "BreachAndClear.CSharp.Editor.Plugins.csproj", "{C5F7569B-5991-6B00-5A8C-5DDAFF2A361B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D31E09F3-17E0-DEF2-53DD-9F017800D9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D31E09F3-17E0-DEF2-53DD-9F017800D9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D31E09F3-17E0-DEF2-53DD-9F017800D9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F7569B-5991-6B00-5A8C-5DDAFF2A361B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F7569B-5991-6B00-5A8C-5DDAFF2A361B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F7569B-5991-6B00-5A8C-5DDAFF2A361B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F7569B-5991-6B00-5A8C-5DDAFF2A361B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

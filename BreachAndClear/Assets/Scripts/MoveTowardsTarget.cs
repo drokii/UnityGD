@@ -7,7 +7,7 @@ public class MoveTowardsTarget : MonoBehaviour
 {
     public Transform Target;
     public string IsMovingParam = "IsMoving";
-
+    public AudioClip[] audioclipArray;
     private Animator animator;
     private NavMeshAgent agent;
     public GameObject Player;

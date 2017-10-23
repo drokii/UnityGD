@@ -112,9 +112,6 @@
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -131,8 +128,14 @@
       <Project>{A6643F78-4D91-6C9C-F3F6-55E3C6ADE0E2}</Project>
       <Name>BreachAndClear.CSharp.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="BreachAndClear.CSharp.Editor.Plugins.csproj">
+      <Project>{C5F7569B-5991-6B00-5A8C-5DDAFF2A361B}</Project>
+      <Name>BreachAndClear.CSharp.Editor.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\FMODMigrationUtil.cs" />
+    <Compile Include="Assets\GoogleVR\Editor\FmodGvrAudioRoomEditor.cs" />
     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
     <Compile Include="Assets\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
@@ -155,6 +158,7 @@
     <Compile Include="Assets\SF Pack\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Plugins\FMOD\LICENSE.TXT" />
     <None Include="Assets\SF Pack\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\SF Pack\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\SF Pack\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
