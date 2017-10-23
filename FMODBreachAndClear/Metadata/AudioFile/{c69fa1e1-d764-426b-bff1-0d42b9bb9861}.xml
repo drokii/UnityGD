@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c69fa1e1-d764-426b-bff1-0d42b9bb9861}">
+        <property name="assetPath">
+            <value>278998__visions68__steam-pipe-2.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>55.545034013605445</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{87af50e9-a9bd-42c2-8580-a1c186488509}</destination>
+        </relationship>
+    </object>
+</objects>

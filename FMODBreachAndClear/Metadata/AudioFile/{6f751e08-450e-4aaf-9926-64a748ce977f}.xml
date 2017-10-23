@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{6f751e08-450e-4aaf-9926-64a748ce977f}">
+        <property name="assetPath">
+            <value>cinematic_drama_sweep_05.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>8.3824263038548761</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{87af50e9-a9bd-42c2-8580-a1c186488509}</destination>
+        </relationship>
+    </object>
+</objects>

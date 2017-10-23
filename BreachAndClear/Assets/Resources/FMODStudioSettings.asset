@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:\Users\Pedro\Documents\FMOD Studio\BreachAndClear\BreachAndClear.fspro
-  SourceProjectPathUnformatted: C:\Users\Pedro\Documents\FMOD Studio\BreachAndClear\BreachAndClear.fspro
-  SourceBankPathUnformatted: C:\Users\Pedro\Documents\FMOD Studio\BreachAndClear\Build
+  sourceProjectPath: C:\Users\Pedro\Documents\UnityGD\FMODBreachAndClear\BreachAndClear.fspro
+  SourceProjectPathUnformatted: C:\Users\Pedro\Documents\UnityGD\FMODBreachAndClear\BreachAndClear.fspro
+  SourceBankPathUnformatted: C:\Users\Pedro\Documents\UnityGD\FMODBreachAndClear\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

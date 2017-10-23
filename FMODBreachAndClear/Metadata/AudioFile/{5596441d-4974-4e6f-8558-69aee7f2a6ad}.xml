@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{5596441d-4974-4e6f-8558-69aee7f2a6ad}">
+        <property name="assetPath">
+            <value>Spark_High_Voltage_01.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>3.2043537414965986</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{87af50e9-a9bd-42c2-8580-a1c186488509}</destination>
+        </relationship>
+    </object>
+</objects>
